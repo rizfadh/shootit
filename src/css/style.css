@@ -1,0 +1,272 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+main {
+  background-color: purple;
+}
+
+.container {
+  max-width: 720px;
+  width: 100%;
+  height: 100vh;
+  background: no-repeat center url('../assets/img/background.svg');
+  background-size: cover;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container > .status-container,
+.gun-container {
+  width: 100%;
+  background-color: purple;
+  color: white;
+  z-index: 3;
+}
+
+.menu {
+  position: absolute;
+  max-width: 720px;
+  width: 100%;
+  height: 100vh;
+  background-color: purple;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 4;
+}
+
+.invisible {
+  display: none;
+}
+
+.status-container {
+  flex-basis: 10%;
+}
+
+.element-container {
+  flex-basis: 60%;
+  background-color: purple;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.gun-container {
+  flex-basis: 10%;
+  display: flex;
+  align-items: center;
+}
+
+.element-spot-column {
+  flex-grow: 1;
+  display: flex;
+}
+
+.element-spot {
+  flex-grow: 1;
+  margin: 10px 10px;
+  background-color: hsl(300, 100%, 15%);
+  border-radius: 10px;
+  border: 5px solid hsl(300, 100%, 10%);
+}
+
+.status-container {
+  display: flex;
+  align-items: center;
+}
+
+.status-container > * {
+  flex-basis: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.status-container > h3 {
+  text-align: center;
+}
+
+.gun-container div {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.gun-container div:nth-child(1) {
+  flex-basis: 50%;
+  padding: 10px;
+  display: flex;
+}
+
+.gun-container div:nth-child(2) {
+  flex-basis: 50%;
+}
+
+.gun-container div:nth-child(1) > * {
+  flex-basis: 50%;
+}
+
+.gun {
+  background: no-repeat center url('../assets/img/gun.svg');
+  background-size: contain;
+}
+
+#lives > span {
+  height: 100%;
+  width: 20px;
+  background: no-repeat center url('../assets/img/lives.svg');
+  background-size: contain;
+}
+
+#bullets > span {
+  height: 100%;
+  width: 10px;
+  background: no-repeat center url('../assets/img/ammo.svg');
+  background-size: contain;
+}
+
+.gun-container div button {
+  width: 50px;
+  height: 50px;
+  background: url('../assets/img/reload.svg');
+  background-size: cover;
+  border: 0;
+}
+
+.element-spot > div {
+  width: 100%;
+  height: 100%;
+}
+
+.enemy {
+  background: no-repeat center url('../assets/img/target.svg');
+  background-size: contain;
+}
+
+.hostage {
+  background: no-repeat center url('../assets/img/hostage.svg');
+  background-size: contain;
+}
+
+.bomb {
+  background: no-repeat center url('../assets/img/bomb.svg');
+  background-size: contain;
+}
+
+.loading {
+  animation: 1s infinite alternate cubic-bezier(0.075, 0.82, 0.165, 1) anim;
+}
+
+.best-score {
+  margin-top: 20px;
+  color: white;
+}
+
+.restart-button {
+  margin-top: 20px;
+  width: 50%;
+  padding: 10px;
+  background-color: white;
+  color: purple;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button {
+  display: block;
+  width: 50%;
+  padding: 20px;
+  margin: 20px auto;
+  background-color: white;
+  color: purple;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.start-screen > p {
+  margin: auto;
+  width: 80%;
+}
+
+.social-media {
+  margin-top: 30px;
+}
+
+.social-media > * {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.social-media > * > a {
+  text-decoration: none;
+  color: white;
+  font-size: 3em;
+}
+
+@keyframes anim {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.3);
+  }
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.mb-1 {
+  margin: 5px 0 20px 0;
+}
+
+.table-score {
+  border: 1px solid gray;
+  border-collapse: collapse;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.table-score td,
+.table-score th {
+  padding: 10px 3px;
+}
+
+.table-score tbody:nth-child(odd) tr {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.table-score tbody:nth-child(even) tr {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.name-input {
+  margin-top: 20px;
+  width: 80%;
+  padding: 10px;
+  font-size: 1rem;
+  text-align: center;
+  border-color: transparent;
+  border-radius: 5px;
+}
